@@ -25,16 +25,35 @@ const currentQuestion = document.getElementById("current-question");
 const btnA = document.getElementById("btnA");
 const btnB = document.getElementById("btnB");
 
+// Preload all images
+const imagePaths = [];
+rounds.forEach(r => {
+  imagePaths.push("images/" + r.a);
+  imagePaths.push("images/" + r.b);
+});
+const preloadedImages = [];
+imagePaths.forEach(src => {
+  const img = new Image();
+  img.src = src;
+  preloadedImages.push(img);
+});
+
 function loadRound() {
   if(currentRound >= rounds.length){ showEndGame(); return; }
 
   const round = rounds[currentRound];
   imageA.src = "images/" + round.a;
   imageB.src = "images/" + round.b;
+
   feedback.textContent = "";
   nextPairBtn.classList.add("hidden");
   btnA.disabled = false;
   btnB.disabled = false;
+
+  [imageA, imageB].forEach(img => {
+    img.classList.remove("loaded");
+    img.onload = () => img.classList.add("loaded");
+  });
 
   currentQuestion.textContent = currentRound + 1;
   progressFill.style.width = `${(currentRound / rounds.length)*100}%`;
