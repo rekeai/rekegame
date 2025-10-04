@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reke: Real or Fake?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Reke: Real or Fake?</h1>
+
+    <!-- Progress Tracker -->
+    <div class="progress-container">
+      <p>Question <span id="current-question">1</span> of 10</p>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+
+    <!-- Game Board -->
+    <div id="game-board" class="game-board">
+      <div class="image-pair">
+        <div class="image-container">
+          <img id="imageA" src="images/real1.jpg" alt="Image A" onclick="enlargeImage(this)">
+          <button class="btn" id="btnA" onclick="makeGuess('A')">Image A is Fake</button>
+        </div>
+        <div class="image-container">
+          <img id="imageB" src="images/fake1.jpg" alt="Image B" onclick="enlargeImage(this)">
+          <button class="btn" id="btnB" onclick="makeGuess('B')">Image B is Fake</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback -->
+    <div id="feedback" class="feedback"></div>
+    <button id="next-pair" class="btn hidden" onclick="nextPair()">Next Pair</button>
+
+    <!-- End Game -->
+    <div id="end-game" class="hidden">
+      <p>Thanks for playing! Your final score is <span id="final-score"></span>/10.</p>
+      <button class="btn" onclick="restartGame()">Play Again</button>
+
+      <!-- Social Share -->
+      <div class="share-section">
+        <p>Challenge your friends:</p>
+        <a id="share-twitter" class="share-btn twitter" target="_blank">Share on Twitter/X</a>
+        <a id="share-linkedin" class="share-btn linkedin" target="_blank">Share on LinkedIn</a>
+        <a id="share-whatsapp" class="share-btn whatsapp" target="_blank">Share on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for enlarging -->
+  <div id="modal" class="modal hidden">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
