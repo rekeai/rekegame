@@ -42,17 +42,18 @@ h1 {
 
 .game-board {
   display: flex;
+  flex-direction: row; /* side by side */
   justify-content: center;
   gap: 20px;
 }
 
 .image-container {
   flex: 1;
+  max-width: 45%;
 }
 
 .image-container img {
   width: 100%;
-  max-width: 350px;
   cursor: pointer;
   border: 2px solid #ddd;
   border-radius: 6px;
@@ -84,7 +85,7 @@ h1 {
 }
 
 .modal {
-  display: flex;
+  display: none; /* fixed, hidden by default */
   position: fixed;
   z-index: 10;
   left: 0;
