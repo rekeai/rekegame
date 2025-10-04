@@ -115,4 +115,5 @@ function closeModal(){
   document.getElementById("modal").style.display = "none";
 }
 
-window.onload = loadRound;
+// Start the game
+loadRound();
