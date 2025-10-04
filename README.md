@@ -20,5 +20,6 @@ A fun web game to test if you can spot AI-generated images.
    - `real1.jpg … real10.jpg`
    - `fake1.jpg … fake10.jpg`
 2. Open `index.html` in a browser, or deploy to GitHub Pages.
+3. Website Link: https://rekeai.github.io/rekegame/
 
 Enjoy playing and challenge your friends!
