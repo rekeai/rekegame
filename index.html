@@ -18,15 +18,13 @@
 
     <!-- Game Board -->
     <div id="game-board" class="game-board">
-      <div class="image-pair">
-        <div class="image-container">
-          <img id="imageA" src="images/real1.jpg" alt="Image A" onclick="enlargeImage(this)">
-          <button class="btn" id="btnA" onclick="makeGuess('A')">Image A is Fake</button>
-        </div>
-        <div class="image-container">
-          <img id="imageB" src="images/fake1.jpg" alt="Image B" onclick="enlargeImage(this)">
-          <button class="btn" id="btnB" onclick="makeGuess('B')">Image B is Fake</button>
-        </div>
+      <div class="image-container">
+        <img id="imageA" src="" alt="Image A" onclick="enlargeImage(this)">
+        <button class="btn" id="btnA" onclick="makeGuess('A')">Image A is Fake</button>
+      </div>
+      <div class="image-container">
+        <img id="imageB" src="" alt="Image B" onclick="enlargeImage(this)">
+        <button class="btn" id="btnB" onclick="makeGuess('B')">Image B is Fake</button>
       </div>
     </div>
 
